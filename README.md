@@ -1,6 +1,6 @@
-# PH Music — Deezer Clone
+# 🎵 Streaming-Musica-Deezer-React (PH Music)
 
-Aplicação web de player musical construída com React 19 e Vite, integrando a API pública do Deezer para busca e reprodução de áudio em tempo real.
+Aplicação web de player musical e streaming construída com React 19 e Vite, integrando a API pública do Deezer para busca e reprodução de áudio em tempo real.
 
 ## Visão Geral
 

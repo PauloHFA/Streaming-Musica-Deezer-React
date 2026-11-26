@@ -1,0 +1,33 @@
+name: Web CI — Testes & Qualidade
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Executar Linter (ESLint)
+        run: npm run lint
+
+      - name: Executar Testes Automatizados (Vitest)
+        run: npm run test:run
+
+      - name: Build de Produção (Vite)
+        run: npm run build
